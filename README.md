@@ -32,7 +32,7 @@ Screenshot of the `/etc/audit/rules.d/audit.rules`
 ![Screenshot 1](Screenshots/audit_rules.png)
 
 Screenshot of all the files in `/protected_files`
-<img src="Screenshots/list_files.png" alt="Screenshot 1" width="500"/>
+![Screenshot 1](Screenshots/list_files.png)
 
 Screenshots of the output from `ausearch`, which shows the attack file that changed the protected file
 
