@@ -29,10 +29,10 @@ The following files were affected by attack-a, attack-b or attack-c:
 
 ## Screenshots
 Screenshot of the `/etc/audit/rules.d/audit.rules`
-![Screenshot 1](Screenshots/rules.png)
+![Screenshot 1](Screenshots/audit_rules.png)
 
 Screenshot of all the files in `/protected_files`
-![Screenshot 1](Screenshots/list_files.png)
+<img src="Screenshots/list_files.png" alt="Screenshot 1" width="500"/>
 
 Screenshots of the output from `ausearch`, which shows the attack file that changed the protected file
 
