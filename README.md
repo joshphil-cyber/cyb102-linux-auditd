@@ -28,6 +28,19 @@ The following files were affected by attack-a, attack-b or attack-c:
 - `precipitation.csv` was altered by `attack-c`
 
 ## Screenshots
+Screenshots of the output from `ausearch`, which shows the attack file that changed the protected file
+
+`sudo ausearch -k cloudia_changes`
+![Screenshot 1](Screenshots/cloudia_changes.png)
+
+`sudo ausearch -k oakley_changes`
+![Screenshot 2](Screenshots/oakley_changes.png)
+
+`sudo ausearch -k squeaky_changes`
+![Screenshot 3](Screenshots/squeaky_changes.png)
+
+`sudo ausearch -k precip_changes`
+![Screenshot 4](Screenshots/precip_changes.png)
 
 ## Reflection
 This project helped me honestly appreciate auditing a bit more. Going into this activity, I was expecting to scroll through long logs to determine which attack altered which file. The Linux Audit daemon is a Linux user-friendly HIDS which allows cybersecurity professionals to write custom rules, like watch rules, to check for any suspicious activity like malicious writing to protected files.
