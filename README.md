@@ -11,14 +11,23 @@ Host Intrusion Detection System (HIDS) provides a very efficient way to monitor 
 - **Linux Audit daemon (auditd)**: background service (daemon) used to monitor activity on files with customizable rules, for the purpose of this activity, used for Intrusion Detection
 ## Process
 1. Rules
-  - In `/etc/audit/rules.d/audit.rules` I added a **watch** rule for each file in `/protected_files` (`cloudia.txt`, `car_sales.csv`, `dolly.txt`, `precipitation.csv`, `earthquakes.csv`, `loggy.txt`, `oakley.txt`, `squeaky.txt`, `tosty.txt`, `website.txt`)
-  - **-w** states that the file will be watched for any alterations
-  - **-p** sets the type of permissions to be monitored, in this case, checking **write** permissions as each of the three attacks modify one of the above files
-  - **-k** attaches a **filter key**, which is an important identifier to help search through the logs for each file and see exactly who altered them
-  - For each file, I added a rule in the following format: `-w <filepath> <filename> -p w -k <filter_key>`, each rule with a unique filter key
+    - In `/etc/audit/rules.d/audit.rules` I added a **watch** rule for each file in `/protected_files` (`cloudia.txt`, `car_sales.csv`, ...)
+    - **-w** states that the file will be watched for any alterations
+    - **-p** sets the type of permissions to be monitored, in this case, checking **write** permissions
+    - **-k** attaches a **filter key**
+
 2. Searching Logs
-  -   Made each attack executable (`chmod u+x attack-X`) and ran the attacks (`./attack-X`)
-  -   Searched through the Audit logs using `ausearch`, a command used to search Linux audit logs for specific events based on an identifier, in our case, the unique filter key
-  -   Entered `sudo ausearch -k <filter_key>` to retrieve the specific logs for each file
+    - Made each attack executable (`chmod u+x attack-X`) and ran the attacks (`./attack-X`)
+    - Searched through the Audit logs using `ausearch` (`sudo ausearch -k <filter_key>`)
+   
 ## Key Findings
+The following files were affected by attack-a, attack-b or attack-c:
+- `cloudia.txt` was altered by `attack-a`
+- `oakley.txt` was altered by `attack-b`
+- `squeaky.txt` was altered by `attack-b`
+- `precipitation.csv` was altered by `attack-c`
+
+## Screenshots
+
 ## Reflection
+This project helped me honestly appreciate auditing a bit more. Going into this activity, I was expecting to scroll through long logs to determine which attack altered which file. The Linux Audit daemon is a Linux user-friendly HIDS which allows cybersecurity professionals to write custom rules, like watch rules, to check for any suspicious activity like malicious writing to protected files.
