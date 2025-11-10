@@ -28,6 +28,12 @@ The following files were affected by attack-a, attack-b or attack-c:
 - `precipitation.csv` was altered by `attack-c`
 
 ## Screenshots
+Screenshot of the `/etc/audit/rules.d/audit.rules`
+![Screenshot 1](Screenshots/rules.png)
+
+Screenshot of all the files in `/protected_files`
+![Screenshot 1](Screenshots/list_files.png)
+
 Screenshots of the output from `ausearch`, which shows the attack file that changed the protected file
 
 `sudo ausearch -k cloudia_changes`
